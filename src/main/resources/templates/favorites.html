@@ -46,6 +46,29 @@
     <div class="gifs container">
         <div class="row">
             <h1>Miejsce na wyświetlanie gifów:)</h1>
+            <!--<div th:each="meme : ${memeList}" class="col s12 l4">-->
+                <!--<a th:href="@{|/gifs/${meme.memeUrl}.gif|}"/>-->
+                <!--<img th:src="@{|/gifs/${meme.memeUrl|}"/>-->
+
+            <!--</a>-->
+            <!--</div>-->
+
+
+
+
+                    <div th:each="meme : ${memeList}" class="col s12 l4">
+                        <a th:href="@{|/gif/${meme.memeUrl}|}">
+                            <img th:src="@{|/gifs/${meme.memeUrl}.gif|}" />
+                        </a>
+                    </div>
+
+
+            <!--<ul th:each="meme : ${memeList}">-->
+
+            <!--<li th:text="${meme.memeUrl}" th:value="${meme.memeUrl}"></li>-->
+
+            <!--</ul>-->
+
         </div>
     </div>
 
