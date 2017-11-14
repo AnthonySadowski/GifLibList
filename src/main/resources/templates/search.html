@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" th:href="@{/app.css}" />
 
-
-    <title th:text="'giflib | ' + ${category.name}">Category</title>
+    <title>giflib | Search Result</title>
 </head>
 <body>
 <div class="navbar-fixed">
@@ -20,12 +19,12 @@
             <a th:href="@{/}" class="brand-logo">gif<span>.</span>lib</a>
             <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a th:href="@{/}">Explore</a></li>
+                <li class="active"><a th:href="@{/}">Explore</a></li>
                 <li><a th:href="@{/categories}">Categories</a></li>
                 <li><a th:href="@{/favorites}">Favorites</a></li>
             </ul>
             <ul id="mobile-nav" class="side-nav">
-                <li><a th:href="@{/}">Explore</a></li>
+                <li class="active"><a th:href="@{/}">Explore</a></li>
                 <li><a th:href="@{/categories}">Categories</a></li>
                 <li><a th:href="@{/favorites}">Favorites</a></li>
             </ul>
@@ -37,7 +36,7 @@
         <div class="col s12">
             <form action="#" method="get">
                 <div class="input-field">
-                    <input name="q" type="search" placeholder="Search all gifs..." required="required" autocomplete="off"/>
+                    <input name="q" type="search" placeholder="Wyszukiwanie..." required="required" autocomplete="off"/>
                     <i class="material-icons">search</i>
                 </div>
             </form>
@@ -45,11 +44,15 @@
     </div>
 </div>
 <div class="gifs container">
-    <div class="chip" th:text="${category.id}">category name</div>
     <div class="row">
-        <div th:each="gif : ${gifs}" class="col s12 l4">
-            <a th:href="'/gif-details/' + ${gif.name}">
+
+        <div th:each="gif : ${gif}" class="col s12 l4">
+            <a th:href="@{'/gif-details/' + ${gif.name}|}">
                 <img th:src="@{|/gifs/${gif.name}.gif|}" />
+
+            </a>
+        </div>
+
 
             </a>
         </div>

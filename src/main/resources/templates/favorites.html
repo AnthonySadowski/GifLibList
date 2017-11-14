@@ -45,7 +45,7 @@
     </div>
     <div class="gifs container">
         <div class="row">
-            <h1>Miejsce na wyświetlanie gifów:)</h1>
+
             <!--<div th:each="meme : ${memeList}" class="col s12 l4">-->
                 <!--<a th:href="@{|/gifs/${meme.memeUrl}.gif|}"/>-->
                 <!--<img th:src="@{|/gifs/${meme.memeUrl|}"/>-->
@@ -55,19 +55,12 @@
 
 
 
+            <div th:each="favorite : ${favorite}" class="col s12 l4">
+                <a th:href="@{'gif-details/' + ${favorite.name}|}">
+                    <img th:src="@{|/gifs/${favorite.name}.gif|}" />
 
-                    <div th:each="meme : ${memeList}" class="col s12 l4">
-                        <a th:href="@{|/gif/${meme.memeUrl}|}">
-                            <img th:src="@{|/gifs/${meme.memeUrl}.gif|}" />
-                        </a>
-                    </div>
-
-
-            <!--<ul th:each="meme : ${memeList}">-->
-
-            <!--<li th:text="${meme.memeUrl}" th:value="${meme.memeUrl}"></li>-->
-
-            <!--</ul>-->
+                </a>
+            </div>
 
         </div>
     </div>

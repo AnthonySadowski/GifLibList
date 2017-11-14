@@ -4,15 +4,29 @@ import com.example.memes.Dao.GifDao;
 
 import java.util.List;
 
-public class Category implements GifDao {
-    private static List<Meme> memeCategoryList;
+public class Category{
+    private Long id;
+    private String name;
 
-    public List<Meme> getMemeCategoryList() {
-        return memeCategoryList;
+    public Category(Long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public Category(List<Meme> memeCategoryList) {
-        this.memeCategoryList = memeCategoryList;
+    public Long getId() {
+        return id;
     }
-    public Category(){}
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }
