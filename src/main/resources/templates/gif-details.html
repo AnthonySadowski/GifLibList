@@ -16,6 +16,9 @@
     <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
     <script th:src="@{/app.js}"></script>
 
+    <script th:src="@{/copy.js}"></script>
+
+
 
 
 </head>
@@ -43,8 +46,8 @@
             </div>
             <div class="col s12 l6">
                 <div class="share">
-                    <a class="btn right" href="#">Copy</a>
-                    <span th:text="'http://gif.fy/' + ${gif.name}">URL</span>
+                    <button class="btn right" onclick="Copy()">Copy</button>
+                    <textarea id="txtarea" th:text="'http://gif.fy/' + ${gif.name}">URL</textarea>
 
                 </div>
             </div>

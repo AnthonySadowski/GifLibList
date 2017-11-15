@@ -11,6 +11,29 @@
     <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" th:href="@{/app.css}" />
+    <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
+    <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
+    <script th:src="@{/app.js}"></script>
+    <script>
+$(function() {
+
+$("#nav").load("menu.html");
+
+function activeNav() {
+var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
+$("#nav ul li a").each(function(){
+if($(this).attr("href") == pgurl || $(this).attr("href") == '' )
+$(this).addClass("active");
+});
+}
+
+setTimeout(function() {
+activeNav();
+}, 100);
+
+});
+</script>
+
 
 </head>
 <body>
@@ -33,5 +56,6 @@
         </div>
     </nav>
 </div>
+
 </body>
 </html>

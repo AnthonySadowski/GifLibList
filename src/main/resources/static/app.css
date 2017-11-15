@@ -8,6 +8,17 @@ nav {
     background-color: #896bb3;
     box-shadow: none;
 }
+textarea {
+        resize: none;
+        border:none;
+        display: block;
+        width:70%;
+        color:#896bb3;
+        font-size:17px;
+        height:36px;
+        padding-top:6px;
+        outline: none;
+        }
 
 nav .brand-logo, nav ul li.active a {
     color: #fefefe;
@@ -299,4 +310,15 @@ nav ul li.active, nav ul li:hover {
     .chip {
         margin-left: 0.8rem;
     }
+    textarea {
+            resize: none;
+            border:none;
+            display: block;
+            width:70%;
+            color:#896bb3;
+            font-size:17px;
+            height:36px;
+            padding-top:6px;
+            outline: none;
+            }
 }
