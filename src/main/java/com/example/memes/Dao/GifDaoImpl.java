@@ -55,6 +55,21 @@ return gifList;
         return gifInCategory;
     }
 
+    public List<Gif> getSearchByName(String name){
+        List<Gif> searchAll = new ArrayList<>();
+        for(Gif gif: gifList){
+            if(gif.getName().contains((name.toLowerCase()))) {
+                searchAll.add(gif);
+            }
+        }
+        for(Gif addGif: gifList){
+            if(addGif.getCategory().getName().compareTo(name.toLowerCase())==0){
+                searchAll.add(addGif);
+            }
+        }
+        return searchAll;
+    }
+
 
 
 }

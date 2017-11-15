@@ -50,7 +50,7 @@ public class MainController {
     }
     @GetMapping("/search")
     public String searchByname(@RequestParam String q, ModelMap modelMap){
-        modelMap.addAttribute("gif", gifDao.findByName(q));
+        modelMap.addAttribute("gif", gifDao.getSearchByName(q));
         System.out.println(gifDao.findByName(q));
         return "search";
     }
