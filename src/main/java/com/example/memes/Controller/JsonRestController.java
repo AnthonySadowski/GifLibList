@@ -16,15 +16,11 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
     public class JsonRestController {
 
-//        private static final String template = "Hello, %s!";
-//
-//        private final AtomicLong counter = new AtomicLong();
         @Autowired
         CategoryDao categoryDao;
 
         @Autowired
         GifDao gifDao;
-
 
         @RequestMapping("/api/categories/{id}")
         public Category category(@PathVariable Long id) {
@@ -34,7 +30,6 @@ import java.util.concurrent.atomic.AtomicLong;
         @RequestMapping("/api/categories/")
         public List<Category> category() {
             return categoryDao.findAll();
-
         }
 
         @RequestMapping("/api/gifs/")
